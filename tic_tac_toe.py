@@ -1,3 +1,6 @@
+'''TIC TAC TOE by Troy Hans
+   A single player tic-tac-toe console game'''
+
 from random import randint
 from os import system
 from time import sleep

@@ -1,2 +1,3 @@
 # tic-tac-toe
-A console Tic-Tac-Toe game
+A single player console Tic-Tac-Toe game
+

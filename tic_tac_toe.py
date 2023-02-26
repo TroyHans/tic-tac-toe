@@ -7,10 +7,6 @@ PLAYER = 'X'
 COMPUTER = 'O'
 CURRENT_PLAYER = PLAYER
 
-def main():
-    '''main function'''
-    game()
-
 def game():
     '''running the game'''
     while True:
@@ -91,5 +87,5 @@ def check_for_win_or_tie():
     return False
 
 if __name__ == '__main__':
-    main()
+    game()
     

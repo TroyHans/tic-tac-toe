@@ -40,13 +40,15 @@ def player_select():
     while True:
         try:
             display_board()
-            user_input = int(input("\t   player\nPlease choose a square 1 - 9: "))
+            user_input = int(input("\t   Player\nPlease choose a square 1 - 9: "))
             if user_input in range(1, 10) and board[user_input].isdigit():
                 board[user_input] = player
                 break
-            print('You must select an unplayed square')
-            sleep(2)
+            print('\nYou must select an unplayed square')
+            sleep(3)
         except ValueError:
+            print(f'\nERROR: Not a number between 1 - 9\n\tTry again')
+            sleep(3)
             continue
 
 def computer_select():
@@ -54,14 +56,14 @@ def computer_select():
     global current_player
     current_player = computer
     display_board()
-    print('   The computer is playing')
+    print('   The Computer is playing')
     sleep(randint(2, 5))
     while True:
         comp_choice = randint(1, 9)
         if board[comp_choice].isdigit():
             board[comp_choice] = computer
             display_board()
-            print(f'   I have chosen square #{comp_choice}')
+            print(f'   I have chosen square {comp_choice}')
             sleep(2)
             break
 

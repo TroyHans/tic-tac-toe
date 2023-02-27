@@ -35,6 +35,7 @@ def display_board():
 
 def player_select():
     '''The player inputs a square selection'''
+    global current_player
     current_player = player
     while True:
         try:
@@ -50,6 +51,7 @@ def player_select():
 
 def computer_select():
     '''The computer dumb selects a random available square'''
+    global current_player
     current_player = computer
     display_board()
     print('   The computer is playing')

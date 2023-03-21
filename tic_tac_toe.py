@@ -52,6 +52,7 @@ def player_select():
             continue
 
 def computer_select():
+    '''The computer tries to win or block'''
     global current_player
     current_player = computer
     display_board()
@@ -112,4 +113,3 @@ def check_for_win_or_tie():
 
 if __name__ == '__main__':
     game()
-    

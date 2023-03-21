@@ -52,12 +52,35 @@ def player_select():
             continue
 
 def computer_select():
-    '''The computer dumb selects a random available square'''
     global current_player
     current_player = computer
     display_board()
     print('   The Computer is playing')
     sleep(randint(2, 5))
+
+    # Check if the computer can win in the next move
+    for i in range(1, 10):
+        if board[i].isdigit():
+            board[i] = computer
+            if check_for_win_or_tie():
+                return
+            else:
+                board[i] = str(i)
+
+    # Check if the player can win in the next move and block them
+    for i in range(1, 10):
+        if board[i].isdigit():
+            board[i] = player
+            if check_for_win_or_tie():
+                board[i] = computer
+                display_board()
+                print(f'   I have chosen square {i}')
+                sleep(2)
+                return
+            else:
+                board[i] = str(i)
+
+    # If neither the computer nor the player can win in the next move, choose a random square
     while True:
         comp_choice = randint(1, 9)
         if board[comp_choice].isdigit():
@@ -66,6 +89,7 @@ def computer_select():
             print(f'   I have chosen square {comp_choice}')
             sleep(2)
             break
+
 
 def check_for_win_or_tie():
     '''Checks for a win or tie'''
